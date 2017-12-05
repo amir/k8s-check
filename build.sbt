@@ -9,6 +9,7 @@ lazy val root = (project in file(".")).settings(inThisBuild(List(
   libraryDependencies ++= Seq(
     playWS,
     skuber,
+    diffson,
     jacksonCore,
     jacksonScala,
     jacksonYaml,
