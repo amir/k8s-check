@@ -15,5 +15,6 @@ lazy val root = (project in file(".")).settings(inThisBuild(List(
     jacksonYaml,
     jacksonDatabind,
     scalacheck,
-  )
+  ),
+  testOptions in Test += Tests.Argument(TestFrameworks.ScalaCheck, "-minSuccessfulTests", "100")
 )
