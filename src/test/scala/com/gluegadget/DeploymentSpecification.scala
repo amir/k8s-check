@@ -35,7 +35,7 @@ object DeploymentSpecification extends Properties("Deployment") {
     implicit val arbitraryJson = Arbitrary[CheckJsValue](swaggerCheck.jsonGenerator(definition))
 
     forAll { j: CheckJsValue =>
-      val JsSuccess(h, p) = Json.parse(j.minified).validate[Deployment]
+      val JsSuccess(_, p) = Json.parse(j.minified).validate[Deployment]
 
       p.toString() == ""
     }
