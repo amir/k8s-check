@@ -11,4 +11,5 @@ object Dependencies {
   lazy val playWS = "com.typesafe.play" %% "play-ws" % "2.6.7"
   lazy val skuber = "io.skuber" %% "skuber" % "2.0.0-RC2"
   lazy val diffson = "org.gnieh" %% f"diffson-play-json" % "2.2.4"
+  lazy val scalatest = "org.scalatest" %% "scalatest" % "3.2.0-SNAP9"
 }
