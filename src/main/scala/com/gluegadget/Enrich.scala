@@ -2,6 +2,8 @@ package com.gluegadget
 
 import java.io.{File, FileInputStream}
 
+import de.leanovate.swaggercheck.SwaggerChecks
+import de.leanovate.swaggercheck.schema.SwaggerAPI
 import gnieh.diffson.Pointer
 import gnieh.diffson.playJson._
 import play.api.libs.json._
@@ -33,7 +35,7 @@ case object PortName extends Identifier {
 case class PathIdentifier(path: JsPath, identifier: Identifier)
 
 object Enrich {
-  def findPaths(str: String, path: JsPath, value: JsValue, acc: List[JsPath] = List.empty[JsPath]): List[JsPath] = {
+  private def findPaths(str: String, path: JsPath, value: JsValue, acc: List[JsPath] = List.empty[JsPath]): List[JsPath] = {
     value match {
       case o: JsObject =>
         o.fields.flatMap { e =>
