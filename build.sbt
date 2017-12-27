@@ -7,6 +7,7 @@ lazy val root = (project in file(".")).settings(inThisBuild(List(
 )),
   name := "k8s-check",
   libraryDependencies ++= Seq(
+    accord,
     playWS,
     skuber,
     diffson,
